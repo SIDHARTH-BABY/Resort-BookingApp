@@ -10,41 +10,73 @@ const Banner = () => {
           alt="Girl in a jacket"
         />
       </div>
+
       <div>
         <div class="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
           <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
-              <div class="max-w-xl lg:max-w-lg">
-                {/* <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                  
-                  Subscribe to our newsletter.
-                </h2> */}
-                <div class="box-content h-72 w-52 p-4 border-4 ...">
-                  {/* <!-- ... --> */}
-                </div>
-             
-               
-              </div>
               <dl class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
                 <div class="flex flex-col items-start">
-                  <div class="box-content h-72 w-52 p-4 border-4 ...">
-                    {/* <!-- ... --> */}
-                  </div>
+                  <div class="box-content h-72 w-52 p-4 border-4 ..."></div>
                 </div>
                 <div class="flex flex-col items-start">
-                  <div class="box-content h-72 w-52 p-4 border-4 ...">
-                    {/* <!-- ... --> */}
-                  </div>
+                  <div class="box-content h-72 w-52 p-4 border-4 ..."></div>
+                </div>
+              </dl>
+
+              <dl class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
+                <div class="flex flex-col items-start">
+                  <div class="box-content h-72 w-52 p-4 border-4 ..."></div>
+                </div>
+                <div class="flex flex-col items-start">
+                  <div class="box-content h-72 w-52 p-4 border-4 ..."></div>
                 </div>
               </dl>
             </div>
           </div>
+
           <div
             class="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6"
             aria-hidden="true"
           >
             <div class="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"></div>
           </div>
+        </div>
+      </div>
+      {/* //quote */}
+      <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ...">
+        <div class="flex flex-col items-center py-16 ">
+          <p class="font-bold  sm:text-sm   	font-style: normal text-xl font-serif text-white">
+            WHERE MEMORIES ARE MADE
+          </p>
+          <p class="py-6  font-bold 	font-style: normal md:text-4xl lg:text-4xl sm:text-sm font-mono text-white  ">
+            An unforgettable experience
+          </p>
+        </div>
+      </div>
+
+      {/* //Madikai sample images */}
+
+      <div class="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
+        <div class="flex flex-col items-center py-16">
+          <img class="h-screen " src="images/front1.jpg" alt="madikai" />
+        </div>
+
+        <div
+          class="absolute left-1/2 top-16 -z-10 -translate-x-1/2 blur-3xl xl:-top-6 mt-40"
+          aria-hidden="true"
+        >
+          <div class=" aspect-[1155/678] w-[72.1875rem] h-[52.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"></div>
+        </div>
+      </div>
+
+      {/* //colour inversion */}
+      <div class="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
+        <div
+          class="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6"
+          aria-hidden="true"
+        >
+          <div class="aspect-[1155/678] w-[72.1875rem]  bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"></div>
         </div>
       </div>
     </div>
