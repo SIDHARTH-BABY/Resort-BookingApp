@@ -1,37 +1,95 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+import { RxDotFilled } from "react-icons/rx";
 const Banner = () => {
+  const slides = [
+    {
+      url: "images/front.jpg",
+    },
+    {
+      url: "images/veedu.jpg",
+    },
+    {
+      url: "images/front1.jpg",
+    },
+
+    {
+      url: "images/front.jpg",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80",
+    },
+  ];
+
+  const bannerImage = [
+    {
+      num: "images/front-view.jpg",
+    },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevSlide = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const nextSlide = () => {
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToSlide = (slideIndex) => {
+    setCurrentIndex(slideIndex);
+  };
   return (
     <div>
-      <div class="bg-slate-500">
-        <img
-          class="w-screen h-96"
-          src="images/banner.jpg"
+      {/* Top-banner */}
+
+      <div class=" dark:bg-gray-900 grid justify-items-center ">
+        {/* <img
+          class="  h-96"
+          src="images/front-view.jpg"
           alt="Girl in a jacket"
-        />
+        /> */}
+        <div class="max-w-[1400px] h-[580px] w-full m-auto py-16 px-4 relative group">
+          <div
+            style={{ backgroundImage: `url(images/front-view.jpg)` }}
+            class="w-full h-full rounded-2xl bg-center bg-cover duration-500"
+          ></div>
+        </div>
       </div>
+
+      {/* //cousal */}
 
       <div>
         <div class="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
-          <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
-              <dl class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
-                <div class="flex flex-col items-start">
-                  <div class="box-content h-72 w-52 p-4 border-4 ..."></div>
+          {/* //carousal start*/}
+          <div class="max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative group">
+            <div
+              style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
+              class="w-full h-full rounded-2xl bg-center bg-cover duration-500"
+            ></div>
+            {/* Left Arrow */}
+            <div class="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+              <BsChevronCompactLeft onClick={prevSlide} size={30} />
+            </div>
+            {/* Right Arrow */}
+            <div class="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+              <BsChevronCompactRight onClick={nextSlide} size={30} />
+            </div>
+            <div class="flex top-4 justify-center py-2">
+              {slides.map((slide, slideIndex) => (
+                <div
+                  key={slideIndex}
+                  onClick={() => goToSlide(slideIndex)}
+                  class="text-2xl cursor-pointer"
+                >
+                  <RxDotFilled />
                 </div>
-                <div class="flex flex-col items-start">
-                  <div class="box-content h-72 w-52 p-4 border-4 ..."></div>
-                </div>
-              </dl>
-
-              <dl class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
-                <div class="flex flex-col items-start">
-                  <div class="box-content h-72 w-52 p-4 border-4 ..."></div>
-                </div>
-                <div class="flex flex-col items-start">
-                  <div class="box-content h-72 w-52 p-4 border-4 ..."></div>
-                </div>
-              </dl>
+              ))}
             </div>
           </div>
 
@@ -43,6 +101,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
+
       {/* //quote */}
       <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ...">
         <div class="flex flex-col items-center py-16 ">
